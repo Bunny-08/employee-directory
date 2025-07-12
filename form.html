@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add/Edit Employee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <main class="form-container">
+    <h1 id="formTitle">Add Employee</h1>
+
+    <form id="employeeForm">
+      <input type="hidden" id="employeeId" />
+
+      <label>First Name: <input type="text" id="firstName" required /></label>
+      <label>Last Name: <input type="text" id="lastName" required /></label>
+      <label>Email: <input type="email" id="email" required /></label>
+      <label>Department:
+        <select id="department" required>
+          <option value="">-- Select Department --</option>
+          <option value="HR">HR</option>
+          <option value="IT">IT</option>
+          <option value="Finance">Finance</option>
+          <option value="Marketing">Marketing</option>
+        </select>
+      </label>
+      <label>Role:
+        <select id="role" required>
+          <option value="">-- Select Role --</option>
+          <option value="Manager">Manager</option>
+          <option value="Developer">Developer</option>
+          <option value="Analyst">Analyst</option>
+          <option value="Intern">Intern</option>
+        </select>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit">Save</button>
+        <button type="button" onclick="window.location.href='index.html'">Cancel</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="static/js/data.js"></script>
+  <script src="static/js/form.js"></script>
+</body>
+</html>
