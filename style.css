@@ -1,31 +1,219 @@
-/* Base button styling */
-button {
-  padding: 10px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+/* ========== Base Styles ========== */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+/* ========== Header ========== */
+header {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.top-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.top-controls input,
+.top-controls select,
+.top-controls button {
+  padding: 10px;
   border-radius: 6px;
-  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+.top-controls button {
+  background-color: #4e73df;
+  color: white;
   cursor: pointer;
-  margin: 5px;
-  transition: all 0.2s ease-in-out;
+  border: none;
 }
 
-button:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+.top-controls button:hover {
+  background-color: #375ac2;
 }
 
-/* Specific Button Colors */
+/* ========== Employee Cards ========== */
+#employeeList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.employee-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid #4e73df;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.employee-card h2 {
+  margin-bottom: 10px;
+}
+
+.employee-card p {
+  margin: 6px 0;
+}
+
+.employee-card .actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.employee-card .edit-btn,
+.employee-card .delete-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
 .edit-btn {
-  background-color: #28a745;
+  background-color: #1cc88a;
+  color: white;
 }
+
 .delete-btn {
-  background-color: #dc3545;
+  background-color: #e74a3b;
+  color: white;
 }
-.add-btn {
-  background-color: #007bff;
+
+/* ========== Pagination ========== */
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.filter-btn {
-  background-color: #17a2b8;
+
+#paginationButtons button {
+  padding: 6px 10px;
+  margin: 0 2px;
+  border: none;
+  background-color: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#paginationButtons button.active {
+  background-color: #4e73df;
+  color: white;
+}
+
+/* ========== Form Page ========== */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container form label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #4e73df;
+  color: white;
+}
+
+.form-actions button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* ========== Filter Sidebar ========== */
+#filterSidebar {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  width: 220px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none;
+}
+
+#filterSidebar label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#filterSidebar select,
+#filterSidebar input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Toggle via JS */
+#filterSidebar.hidden {
+  display: none;
+}
+
+/* ========== Responsive ========== */
+@media screen and (max-width: 768px) {
+  .top-controls {
+    flex-direction: column;
+  }
+
+  #filterSidebar {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
